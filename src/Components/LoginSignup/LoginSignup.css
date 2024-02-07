@@ -9,6 +9,41 @@
     border-radius:7px;
 }
 
+.role-selection{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-top: 50px;
+    width: 600px;
+    background: #f1eee9;
+}
+
+.role {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.role img {
+    width: 100px;
+    height: 100%;
+}
+
+.role.selected {
+    background: #eaeaea;
+}
+
+.role div {
+    font-size: 19px;
+    font-weight: 400;
+    padding-top: 20px;
+    color: #676767;
+    
+}
+
 .header{
     display: flex;
     flex-direction: column;
