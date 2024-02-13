@@ -10,7 +10,7 @@
     border-radius:7px;
 }
 
-.role-selection{
+.roleSelection{
     display: flex;
     justify-content: center;
     margin: auto;
@@ -98,19 +98,19 @@
     font-size: 19px;
 }
 
-.forgot-password{
+.forgotPassword{
     padding-left: 62px;
     margin-top: 27px;
     color: #797979;
     font-size: 18px;
 }
 
-.forgot-password span{
+.forgotPassword span{
     color: #3d45b8;
     cursor: pointer;
 }
 
-.submit-container{
+.submitContainer{
     display: flex;
     gap: 30px;
     margin: 60px auto;

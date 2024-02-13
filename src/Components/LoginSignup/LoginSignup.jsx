@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './LoginSignup.css';
+import styles from './LoginSignup.module.css';
 import { useNavigate } from 'react-router-dom';
 
 // import assets/images
@@ -16,9 +16,9 @@ const LoginSignup = () => {
     
     // states for input fields
     const [name, setName] = useState("");
-    const[school, setSchool] = useState("");
-    const[email, setEmail] = useState("");
-    const[password, setPassword] = useState("");
+    const [school, setSchool] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
 
     const navigate = useNavigate();
 
@@ -58,49 +58,48 @@ const LoginSignup = () => {
     };
 
     return (
-        <div className='container'>
-            <div className='header'>
-                <div className='text'>{action}</div>
-                <div className='underline'></div>
+        <div className={styles.container}>
+            <div className={styles.header}>
+                <div className={styles.text}>{action}</div>
+                <div className={styles.underline}></div>
             </div>
-            {action==="Login"?null:<div className='role-selection'>
-                <div className={`role ${role === "student" ? "selected" : ""}`} onClick={()=>{setRole("student")}}>
+            {action==="Login"?null:<div className={styles.roleSelection}>
+                <div className={`${styles.role} ${role === "student" ? styles.selected : ""}`} onClick={()=>{setRole("student")}}>
                     <img src={student_icon} alt="" />
                     <div>Student</div>
                 </div>
-                <div className={`role ${role === "practitioner" ? "selected" : ""}`} onClick={()=>{setRole("practitioner")}}>
+                <div className={`${styles.role} ${role === "practitioner" ? styles.selected : ""}`} onClick={()=>{setRole("practitioner")}}>
                     <img src={practitioner_icon} alt="" />
                     <div>Practitioner</div>
                 </div>
             </div>}
-            <div className='inputs'>
-                {action==="Login"?null:<div className='input'>
+            <div className={styles.inputs}>
+                {action==="Login"?null:<div className={styles.input}>
                     <img src={user_icon} alt="" />
                     <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)}/>
                 </div>}
 
-                {role==="student"?<div className='input'>
+                {role==="student"?<div className={styles.input}>
                     <img src={user_icon} alt="" />
                     <input type="email" placeholder="School" value={school} onChange={(e) => setSchool(e.target.value)}/>
                 </div>:null}
                 
-                <div className='input'>
+                <div className={styles.input}>
                     <img src={email_icon} alt="" />
                     <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}/>
                 </div>
-                <div className='input'>
+                <div className={styles.input}>
                     <img src={password_icon} alt="" />
                     <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
                 </div>
             </div>
-            {action==="Sign Up"?<div></div>:<div className='forgot-password'>Lost Password? <span>Click Here</span></div>}
-            <div className='submit-container'>
-                <div className={action==="Login"?"submit gray":"submit"} onClick={()=>{handleActionChange("Sign Up")}}>Sign Up</div>
-                <div className={action==="Sign Up"?"submit gray":"submit"} onClick={()=>{handleActionChange("Login")}}>Login</div>
+            {action==="Sign Up"?<div></div>:<div className={styles.forgotPassword}>Lost Password? <span>Click Here</span></div>}
+            <div className={styles.submitContainer}>
+                <div className={action==="Login"?styles.submitGray:styles.submit} onClick={()=>{handleActionChange("Sign Up")}}>Sign Up</div>
+                <div className={action==="Sign Up"?styles.submitGray:styles.submit} onClick={()=>{handleActionChange("Login")}}>Login</div>
             </div>
         </div>
     );
 };
 
 export default LoginSignup
-
