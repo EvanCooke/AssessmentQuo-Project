@@ -63,7 +63,7 @@ const LoginSignup = () => {
                 <div className='text'>{action}</div>
                 <div className='underline'></div>
             </div>
-            {action==="Login"?null:<div className='role-selection'>
+            {<div className='role-selection'>
                 <div className={`role ${role === "student" ? "selected" : ""}`} onClick={()=>{setRole("student")}}>
                     <img src={student_icon} alt="" />
                     <div>Student</div>
