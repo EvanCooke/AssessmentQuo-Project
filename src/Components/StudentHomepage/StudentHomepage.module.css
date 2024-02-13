@@ -80,3 +80,21 @@
     cursor: pointer;
     margin-top: 20px;
 }
+
+.subtextContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.smallButton {
+    
+    height: 30px;
+    background: #888ee0;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    margin-left: 20px;
+}
