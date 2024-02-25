@@ -14,10 +14,11 @@ import axios from 'axios';
 const LoginSignup = () => {
 
     const [action,setAction] = useState("Login");
-    const [role,setRole] = useState("");
+    const [role,setRole] = useState("student");
     
     // states for input fields
-    const [name, setName] = useState("");
+    const [fname, setFname] = useState("");
+    const [lname, setLname] = useState("");
     const [school, setSchool] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -29,7 +30,7 @@ const LoginSignup = () => {
         if (action === "Login") {
             return email !== "" && password !== "";
         } else {
-            return name !== "" && email !== "" && password !== "" && (role === "student" ? school !== "" : true);
+            return fname !== "" && lname !== "" && email !== "" && password !== "" && (role === "student" ? school !== "" : true);
         }
     };
 
@@ -37,21 +38,32 @@ const LoginSignup = () => {
     const handleActionChange = (newAction) => {
         if(role === 'student') {
             if(action === newAction) {
-                if (isFormValid()) {
-                    navigate("/student-home")
-                } else {   
-                    alert('Empty Fields');
+                if(newAction == "Sign Up"){
+                    submitHandler()
+                    setAction("Login")
+                } else {
+                    if (isFormValid()) {
+                        navigate("/student-home")
+                    } else {   
+                        alert('Empty Fields');
+                    }
                 }
             }else{
                 setAction(newAction);
             }
         }else{
             if(action === newAction) {
-                if (isFormValid()) {
-                    navigate("/practitioner-home")
-                } else {   
-                    alert('Empty Fields');
+                if(newAction == "Sign Up"){
+                    submitHandler()
+                    setAction("Login")
+                } else {
+                    if (isFormValid()) {
+                        navigate("/practitioner-home")
+                    } else {   
+                        alert('Empty Fields');
+                    }
                 }
+                
             }
             else{
                 setAction(newAction);
@@ -59,10 +71,18 @@ const LoginSignup = () => {
         }
     };
 
-    const testFunc = () => {
-        axios.get('http://localhost:6060').then(() => {
-            console.log('Yippie!')
-        })
+    const submitHandler = e => {
+        
+        if (role === "student"){
+            axios.post('http://localhost:6060/signup', {role: role, email: email, fname: fname, lname: lname, password: password, school: school}).then((data) => {
+                console.log(data)
+            })
+        } else{
+            axios.post('http://localhost:6060/signup', {role: role, email: email, fname: fname, lname: lname, password: password}).then((data) => {
+                console.log(data)
+            })
+        }
+        
     }
     
     return (
@@ -71,7 +91,7 @@ const LoginSignup = () => {
                 <div className={styles.text}>{action}</div>
                 <div className={styles.underline}></div>
             </div>
-            {action==="Login"?null:<div className={styles.roleSelection}>
+            {<div className={styles.roleSelection}>
                 <div className={`${styles.role} ${role === "student" ? styles.selected : ""}`} onClick={()=>{setRole("student")}}>
                     <img src={student_icon} alt="" />
                     <div>Student</div>
@@ -84,13 +104,18 @@ const LoginSignup = () => {
             <div className={styles.inputs}>
                 {action==="Login"?null:<div className={styles.input}>
                     <img src={user_icon} alt="" />
-                    <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)}/>
+                    <input type="text" placeholder="First Name" value={fname} onChange={(e) => setFname(e.target.value)}/>
                 </div>}
 
-                {role==="student"?<div className={styles.input}>
+                {action==="Login"?null:<div className={styles.input}>
                     <img src={user_icon} alt="" />
-                    <input type="email" placeholder="School" value={school} onChange={(e) => setSchool(e.target.value)}/>
-                </div>:null}
+                    <input type="text" placeholder="Last Name" value={lname} onChange={(e) => setLname(e.target.value)}/>
+                </div>}
+
+                {role === "practitioner" || action==="Login"?null:<div className={styles.input}>
+                    <img src={user_icon} alt="" />
+                    <input type="text" placeholder="School" value={school} onChange={(e) => setSchool(e.target.value)}/>
+                </div>}
                 
                 <div className={styles.input}>
                     <img src={email_icon} alt="" />
