@@ -5,7 +5,7 @@ function StudentHomepage() {
     return (
         <div>
             <div className={styles.headerBar}>
-                <h2>Student Homepage</h2>
+                <h2 className={styles.headerText}>Student Homepage</h2>
             </div>
             <div className={styles.parentContainer}>
                 <div className={styles.container}>
