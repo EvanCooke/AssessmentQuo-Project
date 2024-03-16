@@ -12,6 +12,7 @@ import practitioner_icon from '../Assets/training-icon.png';
 
 import { useDispatch, useSelector } from 'react-redux';
 import {studentSignup, practitionerSignup} from '../../store/authSlice';
+import { login } from '../../store/authSlice';
 
 const LoginSignup = () => {
 
@@ -46,10 +47,9 @@ const LoginSignup = () => {
             if(action === newAction) {
                 if(newAction === "Sign Up"){
                     submitHandler()
-                    setAction("Login")
                 } else {
                     if (isFormValid()) {
-                        navigate("/student-home")
+                        loginHandler()
                     } else {   
                         alert('Empty Fields');
                     }
@@ -61,10 +61,9 @@ const LoginSignup = () => {
             if(action === newAction) {
                 if(newAction === "Sign Up"){
                     submitHandler()
-                    setAction("Login")
                 } else {
                     if (isFormValid()) {
-                        navigate("/practitioner-home")
+                        loginHandler()
                         
                     } else {   
                         alert('Empty Fields');
@@ -97,7 +96,13 @@ const LoginSignup = () => {
                 setPassword('')
             })
         }
-        
+    }
+
+    const loginHandler = e => {
+        dispatch(login({role, email, password})).then(() => {
+            setEmail('')
+            setPassword('')
+        })
     }
 
     

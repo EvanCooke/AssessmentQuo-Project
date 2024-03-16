@@ -21,6 +21,16 @@ export const practitionerSignup = createAsyncThunk('auth/practitionerSignup', as
     }
 })
 
+export const login = createAsyncThunk('auth/login', async({role, email, password}, thunkAPI) => {
+    try {
+        const res = await axios.post('http://localhost:6060/login', {role, email, password})
+        return res.data
+    } catch (err) {
+        
+        return thunkAPI.rejectedWithValue(err.response.data)
+    }
+})
+
 const initialState = {
     user: '',
     isLoggedIn: false,
@@ -66,6 +76,23 @@ export const authSlice = createSlice({
                 state.loading = true
             })
             .addCase(practitionerSignup.rejected, (state, action) => {
+                state.loading = false
+                state.isLoggedIn = false
+                state.error = action.payload
+            })
+
+
+
+            .addCase(login.fulfilled, (state, action) => {
+                state.user = action.payload.email
+                state.isLoggedIn = true
+                state.loading = false
+                state.error = null
+            })
+            .addCase(login.pending, (state, action) => {
+                state.loading = true
+            })
+            .addCase(login.rejected, (state, action) => {
                 state.loading = false
                 state.isLoggedIn = false
                 state.error = action.payload

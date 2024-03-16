@@ -54,6 +54,49 @@ app.post('/signup' , (req, res) => {
 })
 
 
+app.post('/login', (req, res) => {
+    const role = req.body.role;
+    const email = req.body.email;
+    const password = req.body.password;
+    if (role == "student"){
+        db.query("SELECT * FROM students WHERE Email = ?", [email], (err, result) => {
+            if (err) {
+                res.status(418).send(err.message)
+            } else if (result.length < 1) {
+                res.status(418).send("Email doesn't match")
+            } else {
+                bcrypt.compare(password, result[0].Pass, (err, match) => {
+                    if (match) {
+                        res.send({email})
+                    }
+                    if (!match) {
+                        res.status(418).send("Password doesn't match:")
+                    }
+                })
+            }
+        })
+    } else {
+        db.query("SELECT * FROM practitioners WHERE Email = ?", [email], (err, result) => {
+            if (err) {
+                res.status(418).send(err.message)
+            } else if (result.length < 1) {
+                res.status(418).send("Email doesn't match")
+            } else {
+                bcrypt.compare(password, result[0].password, (err, match) => {
+                    if (match) {
+                        res.send({email})
+                    }
+                    if (!match) {
+                        res.status(418).send("Password doesn't match")
+                    }
+                })
+            }
+        })
+    }
+    
+})
+
+
 app.listen(6060, () => {
     console.log('server listening on port 6060');
 })
