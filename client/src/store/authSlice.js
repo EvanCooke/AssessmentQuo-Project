@@ -1,21 +1,23 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios'
 
-export const studentSignup = createAsyncThunk('auth/studentSignup', async({role, email, fname, lname, password, school}) => {
+export const studentSignup = createAsyncThunk('auth/studentSignup', async({role, email, fname, lname, password, school}, thunkAPI) => {
     try {
         const res = await axios.post('http://localhost:6060/signup', {role, email, fname, lname, password, school})
         return res.data
     } catch (err) {
         console.log(err)
+        return thunkAPI.rejectedWithValue(err.message)
     }
 })
 
-export const practitionerSignup = createAsyncThunk('auth/practitionerSignup', async({role, email, fname, lname, password}) => {
+export const practitionerSignup = createAsyncThunk('auth/practitionerSignup', async({role, email, fname, lname, password}, thunkAPI) => {
     try {
         const res = await axios.post('http://localhost:6060/signup', {role, email, fname, lname, password})
         return res.data
     } catch (err) {
         console.log(err)
+        return thunkAPI.rejectedWithValue(err.message)
     }
 })
 
@@ -51,7 +53,7 @@ export const authSlice = createSlice({
             .addCase(studentSignup.rejected, (state, action) => {
                 state.loading = false
                 state.isLoggedIn = false
-                state.error = 'An error occurred. Awkward...'
+                state.error = action.payload
             })
 
             .addCase(practitionerSignup.fulfilled, (state, action) => {
@@ -66,7 +68,7 @@ export const authSlice = createSlice({
             .addCase(practitionerSignup.rejected, (state, action) => {
                 state.loading = false
                 state.isLoggedIn = false
-                state.error = 'An error occurred. Awkward...'
+                state.error = action.payload
             })
     }
 })
