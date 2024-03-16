@@ -135,8 +135,8 @@
     color: #676767;
 }
 
-.errmsg{
-    color: #fd0000;
-    font-size: 48px;
-    font-weight: 700;
+.subtext{
+    color: #888ee0;
+    font-size: 1vw;
+    font-weight: 500;
 }

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styles from './LoginSignup.module.css';
 import { useNavigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
 // import assets/images
 import user_icon from '../Assets/person.png';
@@ -9,7 +10,8 @@ import password_icon from '../Assets/password.png';
 import student_icon from '../Assets/graduation-cap.png';
 import practitioner_icon from '../Assets/training-icon.png';
 
-import axios from 'axios';
+import { useDispatch, useSelector } from 'react-redux';
+import {studentSignup, practitionerSignup} from '../../store/authSlice';
 
 const LoginSignup = () => {
 
@@ -22,6 +24,10 @@ const LoginSignup = () => {
     const [school, setSchool] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+
+    const user = useSelector((state) => state.auth.user)
+    const error = useSelector((state) => state.auth.error)
+    const dispatch = useDispatch()
 
     const navigate = useNavigate();
 
@@ -38,7 +44,7 @@ const LoginSignup = () => {
     const handleActionChange = (newAction) => {
         if(role === 'student') {
             if(action === newAction) {
-                if(newAction == "Sign Up"){
+                if(newAction === "Sign Up"){
                     submitHandler()
                     setAction("Login")
                 } else {
@@ -53,12 +59,13 @@ const LoginSignup = () => {
             }
         }else{
             if(action === newAction) {
-                if(newAction == "Sign Up"){
+                if(newAction === "Sign Up"){
                     submitHandler()
                     setAction("Login")
                 } else {
                     if (isFormValid()) {
                         navigate("/practitioner-home")
+                        
                     } else {   
                         alert('Empty Fields');
                     }
@@ -72,18 +79,27 @@ const LoginSignup = () => {
     };
 
     const submitHandler = e => {
-        
+       
         if (role === "student"){
-            axios.post('http://localhost:6060/signup', {role: role, email: email, fname: fname, lname: lname, password: password, school: school}).then((data) => {
-                console.log(data)
+            dispatch(studentSignup({role, email, fname, lname, password, school})).then((res) => {
+                setFname('')
+                setLname('')
+                setSchool('')
+                setEmail('')
+                setPassword('')
             })
         } else{
-            axios.post('http://localhost:6060/signup', {role: role, email: email, fname: fname, lname: lname, password: password}).then((data) => {
-                console.log(data)
+            dispatch(practitionerSignup({role, email, fname, lname, password})).then((res) => {
+                setFname('')
+                setLname('')
+                setSchool('')
+                setEmail('')
+                setPassword('')
             })
         }
         
     }
+
     
     return (
         <div className={styles.container}>
@@ -131,6 +147,9 @@ const LoginSignup = () => {
                 <div className={action==="Login"?styles.submitGray:styles.submit} onClick={()=>{handleActionChange("Sign Up")}}>Sign Up</div>
                 <div className={action==="Sign Up"?styles.submitGray:styles.submit} onClick={()=>{handleActionChange("Login")}}>Login</div>
             </div>
+            {error ? <p className='errmsg'>{error}</p> : null}
+            {role === "student" && user  ? <Navigate to='/student-home' replace={true} /> : null}
+            {role === "practitioner" && user  ? <Navigate to='/practitioner-home' replace={true} /> : null}
         </div>
     );
 };

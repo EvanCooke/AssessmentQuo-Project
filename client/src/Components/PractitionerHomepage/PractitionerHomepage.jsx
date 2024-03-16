@@ -1,12 +1,17 @@
 import React from 'react';
 import styles from './PractitionerHomepage.module.css';
+import { useSelector } from 'react-redux';
 
 
 function PractitionerHomepage() {
+
+    const user = useSelector((state) => state.auth.user)
+    
     return (
         <div>
             <div className={styles.headerBar}>
                 <h2 className={styles.headerText}>Practitioner Homepage</h2>
+                {user ? <h3 className={styles.headerText}>Welcome, {user}</h3> : null}
             </div>
             <div className={styles.parentContainer}>
                 <div className={styles.container}>
