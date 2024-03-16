@@ -70,7 +70,7 @@ app.post('/login', (req, res) => {
                         res.send({email})
                     }
                     if (!match) {
-                        res.status(418).send("Password doesn't match:")
+                        res.status(418).send("Password doesn't match")
                     }
                 })
             }
@@ -82,7 +82,7 @@ app.post('/login', (req, res) => {
             } else if (result.length < 1) {
                 res.status(418).send("Email doesn't match")
             } else {
-                bcrypt.compare(password, result[0].password, (err, match) => {
+                bcrypt.compare(password, result[0].Pass, (err, match) => {
                     if (match) {
                         res.send({email})
                     }

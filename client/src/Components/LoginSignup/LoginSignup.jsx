@@ -111,6 +111,7 @@ const LoginSignup = () => {
             <div className={styles.header}>
                 <div className={styles.text}>{action}</div>
                 <div className={styles.underline}></div>
+                {error ? <div className='errmsg'>{error}</div> : null}
             </div>
             {<div className={styles.roleSelection}>
                 <div className={`${styles.role} ${role === "student" ? styles.selected : ""}`} onClick={()=>{setRole("student")}}>
@@ -151,8 +152,9 @@ const LoginSignup = () => {
             <div className={styles.submitContainer}>
                 <div className={action==="Login"?styles.submitGray:styles.submit} onClick={()=>{handleActionChange("Sign Up")}}>Sign Up</div>
                 <div className={action==="Sign Up"?styles.submitGray:styles.submit} onClick={()=>{handleActionChange("Login")}}>Login</div>
+                
             </div>
-            {error ? <p className='errmsg'>{error}</p> : null}
+            
             {role === "student" && user  ? <Navigate to='/student-home' replace={true} /> : null}
             {role === "practitioner" && user  ? <Navigate to='/practitioner-home' replace={true} /> : null}
         </div>
