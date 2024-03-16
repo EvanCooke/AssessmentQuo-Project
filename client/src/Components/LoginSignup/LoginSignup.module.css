@@ -1,3 +1,10 @@
+.loginPage {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(#A1C4FD, #C2E9FB);
+    font-family: 'Rubik', sans-serif;
+}
+
 .container{
     display: flex;
     flex-direction: column;

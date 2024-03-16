@@ -1,0 +1,141 @@
+.homepage {
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.headerBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: white;
+    background-color: white;
+    z-index: 1000;
+    border: 0.0625rem solid rgb(180, 180, 180);
+}
+
+.headerTitle {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: black;
+    padding-left: 21%;
+}
+
+.contactButton {
+    background-color: #7173F9;
+    color: white;
+    border: none;
+    padding: .5rem 1rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: .9rem;
+    font-weight: bold;
+    margin: 1% 1em; /*might need to change em unit */
+    margin-right: 21vw; /*might need to change vw unit */
+    cursor: pointer;
+    border-radius: .6rem;
+}
+
+.button {
+    border: none;
+    background-color: white;
+    color: #3f3f3f;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 1% 1vh; /*might need to change vh unit */
+    cursor: pointer;
+}
+
+.firstContainer {
+    display: flex;
+    justify-content: space-around; 
+    padding-left: 21%;
+    padding-right: 21%;
+    margin-top: 8%;
+}
+
+.leftHalf {
+    flex: 1;
+    margin-left: 4%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.leftHalf .logo {
+    width: 70%;
+}
+
+.rightHalf {
+    flex: 1;
+    margin-right: 5%;
+    display: flex;
+    flex-direction: column;
+}
+
+.titleText {
+    text-align: center;
+    font-size: 2.6rem;
+    font-weight: 700;
+}
+
+.loginButton {
+    background-color: #7173F9;
+    color: white;
+    border: .2rem solid black;
+    padding: .5rem 1rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: bold;
+    margin: .5rem .5rem;
+    margin-left: 6rem;
+    margin-right: 6rem;
+    cursor: pointer;
+    border-radius: .5rem;
+}
+
+.secondContainer { 
+    position: relative;
+    text-align: center;
+
+}
+
+.starsBackground {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding-top: 5%;
+}
+
+.ourMission {
+    position: absolute;
+    top: 25%;
+    left: 300px;
+    z-index: 1;
+    font-weight: 700;
+    color: white;
+}
+
+.ourMissionText {
+    position: absolute;
+    text-align: left;
+    top: 23%;
+    right: 350px;
+    z-index: 1;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: white;
+}

@@ -38,7 +38,7 @@ const LoginSignup = () => {
     const handleActionChange = (newAction) => {
         if(role === 'student') {
             if(action === newAction) {
-                if(newAction == "Sign Up"){
+                if(newAction === "Sign Up"){
                     submitHandler()
                     setAction("Login")
                 } else {
@@ -86,50 +86,52 @@ const LoginSignup = () => {
     }
     
     return (
-        <div className={styles.container}>
-            <div className={styles.header}>
-                <div className={styles.text}>{action}</div>
-                <div className={styles.underline}></div>
-            </div>
-            {<div className={styles.roleSelection}>
-                <div className={`${styles.role} ${role === "student" ? styles.selected : ""}`} onClick={()=>{setRole("student")}}>
-                    <img src={student_icon} alt="" />
-                    <div>Student</div>
+        <div className={styles.loginPage}>
+            <div className={styles.container}>
+                <div className={styles.header}>
+                    <div className={styles.text}>{action}</div>
+                    <div className={styles.underline}></div>
                 </div>
-                <div className={`${styles.role} ${role === "practitioner" ? styles.selected : ""}`} onClick={()=>{setRole("practitioner")}}>
-                    <img src={practitioner_icon} alt="" />
-                    <div>Practitioner</div>
-                </div>
-            </div>}
-            <div className={styles.inputs}>
-                {action==="Login"?null:<div className={styles.input}>
-                    <img src={user_icon} alt="" />
-                    <input type="text" placeholder="First Name" value={fname} onChange={(e) => setFname(e.target.value)}/>
+                {<div className={styles.roleSelection}>
+                    <div className={`${styles.role} ${role === "student" ? styles.selected : ""}`} onClick={()=>{setRole("student")}}>
+                        <img src={student_icon} alt="" />
+                        <div>Student</div>
+                    </div>
+                    <div className={`${styles.role} ${role === "practitioner" ? styles.selected : ""}`} onClick={()=>{setRole("practitioner")}}>
+                        <img src={practitioner_icon} alt="" />
+                        <div>Practitioner</div>
+                    </div>
                 </div>}
+                <div className={styles.inputs}>
+                    {action==="Login"?null:<div className={styles.input}>
+                        <img src={user_icon} alt="" />
+                        <input type="text" placeholder="First Name" value={fname} onChange={(e) => setFname(e.target.value)}/>
+                    </div>}
 
-                {action==="Login"?null:<div className={styles.input}>
-                    <img src={user_icon} alt="" />
-                    <input type="text" placeholder="Last Name" value={lname} onChange={(e) => setLname(e.target.value)}/>
-                </div>}
+                    {action==="Login"?null:<div className={styles.input}>
+                        <img src={user_icon} alt="" />
+                        <input type="text" placeholder="Last Name" value={lname} onChange={(e) => setLname(e.target.value)}/>
+                    </div>}
 
-                {role === "practitioner" || action==="Login"?null:<div className={styles.input}>
-                    <img src={user_icon} alt="" />
-                    <input type="text" placeholder="School" value={school} onChange={(e) => setSchool(e.target.value)}/>
-                </div>}
-                
-                <div className={styles.input}>
-                    <img src={email_icon} alt="" />
-                    <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}/>
+                    {role === "practitioner" || action==="Login"?null:<div className={styles.input}>
+                        <img src={user_icon} alt="" />
+                        <input type="text" placeholder="School" value={school} onChange={(e) => setSchool(e.target.value)}/>
+                    </div>}
+                    
+                    <div className={styles.input}>
+                        <img src={email_icon} alt="" />
+                        <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}/>
+                    </div>
+                    <div className={styles.input}>
+                        <img src={password_icon} alt="" />
+                        <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
+                    </div>
                 </div>
-                <div className={styles.input}>
-                    <img src={password_icon} alt="" />
-                    <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
+                {action==="Sign Up"?<div></div>:<div className={styles.forgotPassword}>Lost Password? <span>Click Here</span></div>}
+                <div className={styles.submitContainer}>
+                    <div className={action==="Login"?styles.submitGray:styles.submit} onClick={()=>{handleActionChange("Sign Up")}}>Sign Up</div>
+                    <div className={action==="Sign Up"?styles.submitGray:styles.submit} onClick={()=>{handleActionChange("Login")}}>Login</div>
                 </div>
-            </div>
-            {action==="Sign Up"?<div></div>:<div className={styles.forgotPassword}>Lost Password? <span>Click Here</span></div>}
-            <div className={styles.submitContainer}>
-                <div className={action==="Login"?styles.submitGray:styles.submit} onClick={()=>{handleActionChange("Sign Up")}}>Sign Up</div>
-                <div className={action==="Sign Up"?styles.submitGray:styles.submit} onClick={()=>{handleActionChange("Login")}}>Login</div>
             </div>
         </div>
     );
