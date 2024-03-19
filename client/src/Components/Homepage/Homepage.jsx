@@ -8,7 +8,7 @@ import stars_background from '../Assets/stars-background.svg';
 function Homepage() {
     return (
         <div className={styles.homepage}>
-             <div className={styles.headerBar}>
+            <div className={styles.headerBar}>
                 <h2 className={styles.headerTitle}>ASSESSMENTQUO</h2>
                 <div>
                     <button className={styles.button}>About Us</button>

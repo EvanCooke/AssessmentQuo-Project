@@ -67,6 +67,7 @@
 
 .starsBackground {
     border-radius: .9rem;
+    border: 3px solid black;
     /* background: url('../Assets/stars-background.svg') no-repeat center center;  */
     background: url('../Assets/stars-background.svg'); 
     background-size: cover;
