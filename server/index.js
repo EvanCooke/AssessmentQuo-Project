@@ -19,28 +19,6 @@ const db = mysql.createPool({
 
 const saltRounds = 10;
 
-/* 
-const express = require('express');
-const app = express();
-const cors = require('cors');
-const mysql = require('mysql');
-const bodyParser = require('body-parser');
-const bcrypt = require('bcrypt');
-
-app.use(bodyParser.urlencoded({extended: false}));
-app.use(bodyParser.json());
-app.use(cors());
-
-const db = mysql.createPool({
-  connectionLimit : 10,
-  host            : 'localhost',
-  user            : 'hackstreet',
-  password        : 'Drowssap123',
-  database        : 'assessment_quo_db'
-});
-
-const saltRounds = 10;
-*/
 
 
 app.post('/signup' , (req, res) => {
