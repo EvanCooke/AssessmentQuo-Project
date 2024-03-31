@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
-const mysql = require('mysql');
+const pgp = require('pg-promise')();
 const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt');
 
@@ -9,13 +9,8 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(cors());
 
-const db = mysql.createPool({
-  connectionLimit : 10,
-  host            : 'localhost',
-  user            : 'hackstreet',
-  password        : 'Drowssap123',
-  database        : 'assessment_quo_db'
-});
+
+const db = pgp('postgres://hackstreet:Drowssap123@localhost:5432/assessment-quo-db')
 
 const saltRounds = 10;
 
@@ -33,21 +28,22 @@ app.post('/signup' , (req, res) => {
         } else {
             if (role == "student"){
                 const school = req.body.school;
-        
-                db.query("INSERT INTO students (FirstName, LastName, Email, Pass, School) VALUES (?, ?, ?, ?, ?)", [fname, lname, email, hashedPassword, school], (err, result) => {
-                    if (err) {
-                        res.status(418).send("Couldn't register user")
-                    } else {
-                        res.send({email: email})
-                    }
+
+
+                db.any("INSERT INTO students (firstname, lastname, email, pass, school) VALUES ($1, $2, $3, $4, $5)", [fname, lname, email, hashedPassword, school]).then(() => {
+                    res.send({email: email})
                 })
+                .catch(error => {
+                    res.status(418).send("Couldn't resgister user")
+                })
+
+
             } else {
-                db.query("INSERT INTO practitioners (FirstName, LastName, Email, Pass) VALUES (?, ?, ?, ?)", [fname, lname, email, hashedPassword], (err, result) => {
-                    if (err) {
-                        res.status(418).send("Couldn't resgister user")
-                    } else {
-                        res.send({email: email})
-                    }
+                db.any("INSERT INTO practitioners (firstname, lastname, email, pass) VALUES ($1, $2, $3, $4)", [fname, lname, email, hashedPassword]).then(() => {
+                    res.send({email: email})
+                })
+                .catch(error => {
+                    res.status(418).send("Couldn't resgister user")
                 })
             }
         }
@@ -60,13 +56,13 @@ app.post('/login', (req, res) => {
     const email = req.body.email;
     const password = req.body.password;
     if (role == "student"){
-        db.query("SELECT * FROM students WHERE Email = ?", [email], (err, result) => {
-            if (err) {
-                res.status(418).send(err.message)
-            } else if (result.length < 1) {
+
+        db.any("SELECT * FROM students WHERE email = $1", [email]).then(result => {
+            if(result.length < 1){
                 res.status(418).send("Email doesn't match")
-            } else {
-                bcrypt.compare(password, result[0].Pass, (err, match) => {
+            }
+            else {
+                bcrypt.compare(password, result[0].pass, (err, match) => {
                     if (match) {
                         res.send({email})
                     }
@@ -75,15 +71,20 @@ app.post('/login', (req, res) => {
                     }
                 })
             }
+            
         })
+        .catch(err => {
+            res.status(418).send(err.message)
+        })
+
+
     } else {
-        db.query("SELECT * FROM practitioners WHERE Email = ?", [email], (err, result) => {
-            if (err) {
-                res.status(418).send(err.message)
-            } else if (result.length < 1) {
+        db.any("SELECT * FROM practitioners WHERE Email = $1", [email]).then(result => {
+            if(result.length < 1){
                 res.status(418).send("Email doesn't match")
-            } else {
-                bcrypt.compare(password, result[0].Pass, (err, match) => {
+            }
+            else {
+                bcrypt.compare(password, result[0].pass, (err, match) => {
                     if (match) {
                         res.send({email})
                     }
