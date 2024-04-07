@@ -30,7 +30,8 @@ app.post('/signup' , (req, res) => {
                 const school = req.body.school;
 
 
-                db.any("INSERT INTO students (firstname, lastname, email, pass, school) VALUES ($1, $2, $3, $4, $5)", [fname, lname, email, hashedPassword, school]).then(() => {
+                db.any("INSERT INTO students (firstname, lastname, email, pass, school, avatarskin, avatarhaircolor, avatarhairstyle, avatareyecolor) VALUES ($1, $2, $3, $4, $5, 0, 0, 0, 0)", 
+                [fname, lname, email, hashedPassword, school]).then(() => {
                     res.send({email: email})
                 })
                 .catch(error => {
@@ -96,6 +97,21 @@ app.post('/login', (req, res) => {
         })
     }
     
+})
+
+app.put('/avatar', (req, res) => {
+    const id = req.body.id
+    const skincolor = req.body.skincolor
+    const haircolor = req.body.haircolor
+    const hairstyle = req.body.hairstyle
+    const eyecolor = req.body.eyecolor
+    db.any("UPDATE students SET avatarskin = $1, avatarhaircolor = $2, avatarhairstyle = $3, avatareyecolor = $4, WHERE id = $5", [skincolor, haircolor, hairstyle, eyecolor, id]).then(() => {
+        res.send({id})
+    })
+    .catch(error => {
+        res.status(418).send("Couldn't update avatar")
+    })
+
 })
 
 
