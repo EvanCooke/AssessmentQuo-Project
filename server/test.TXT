@@ -1,0 +1,540 @@
+Web / Tablet Application for a Neurocognitive Assessment
+
+Hackstreet Boys
+Evan Cooke, Sam Maschmann, Emily Sheahan
+April 8, 2024
+
+1. Introduction:
+In today’s society, neurodivergence is becoming a mainstream subject to the public as more people start to understand it. Many people can go many years without realizing that they are neurodivergent. Without receiving the needed accommodations the person can run into academic and social struggles. In an effort to enhance early identification of disabilities, the aim of this project was to screen and monitor elementary students for neurocognitive adversities. By delivering diagnostic tests to students at an early age, neurodivergent trends can be detected early enough so that those students can receive the additional help they need as they develop.
+
+Our goal was to design a web application that allows users to login as students or
+practitioners. Once logged in, students use an interface where they can take a diagnostic assessment, and have the test data stored in a repository. Practitioners should be able to use an interface to view, analyze, and export test data. In addition, students should be able to create a personal avatar for their profile and the project should have numerous accessibility settings (braille, text to speech, colorblind friendly, multiple languages, etc.)
+
+2. Project Outcome
+Overall, the project was successful. We managed to meet all of our major goals in developing the application.
+
+All in all, there were no major deviations from the Final Project Proposal. Due to time constraints, we were unable to implement the accessibility features, but all base functionality is implemented.
+
+In general, Evan handled the majority of the front-end design, Sam did the back-end, and Emily worked on integration.
+
+To organize and manage the project, we used Agile methods, breaking up the project into sprints. Communication was key to success, and having regular team meetings was important to keep everyone on track and be of help in case anyone ran into a roadblock.
+
+Time management was one of the factors that held us back in the completion of the project. It was difficult to prioritize the project when, as seniors, we had other concerns such as midterms, projects and labs for other classes, and job hunting. 
+
+• If your project has software component, you are expected to use internet 
+repository and version control platform (GitHub, Gitlab, Bitbucket, etc.). Please 
+include a snapshot of commit history/statistics breakdown by team members. 
+
+3. Design Documentation
+This section of the report should describe the hardware and software design of your 
+project. The documentation should include, as relevant to the design, the following 
+subsections:
+• Design Concept
+• Recap of the initial design concept identified in the Final Project Proposal and 
+how it evolved into your final design. 
+• Design a solution that meets the specified needs 
+• Discuss if the design meets all the needs and specification 
+• Analysis of possible solutions and tradeoffs 
+
+Our sponsor had a SquareSpace website set up as a possible avenue for developing our application, however we quickly realized that it was not suitable for our project. It does not support databases, nor accounts, so we quickly decided to use a different tool. We ended up using Node/React for the frontend web design, and PostgreSQL for the backend. We initially used MySQL for the server, since that was a database that we had used in past projects, however, PostgreSQL was better suited for remote hosting, which is necessary for deploying the application. Switching over the database meant we lost some time, and we should have done more research on databases to avoid this delay.
+
+• A discussion of important considerations and/or tradeoffs involved in reaching 
+the final design.
+• Analyze possible solutions before identifying the best design
+List important constraints that your system must satisfy and the steps that you 
+took in your design to meet these constraints. If you were unable to meet any 
+of the constraints identified in the Final Project Proposal, discuss the reason(s) 
+why this was the case. Also, describe any new constraints that you 
+encountered which were not identified in the Final Project Proposal and how 
+you met these constraints.
+
+There are three major standards we had to comply with in the creation of this project:
+
+HTML is the standard markup language for creating web pages and web applications.
+In this project, HTML will be used to structure the content and layout of the web application's user interface (UI). Compliance with HTML standards ensures compatibility across different web browsers and devices, enhancing the accessibility and usability of the application. 
+
+HIPAA is a federal law in the United States that establishes privacy and security standards for protecting sensitive patient health information (PHI).
+Compliance with HIPAA standards is essential when handling any medical or health-related data, ensuring the confidentiality, integrity, and availability of PHI.
+In the context of the project, adherence to HIPAA standards is crucial for protecting the privacy and security of neurocognitive assessment data collected from students.
+
+FERPA is a federal law in the United States that protects the privacy of student education records. FERPA grants certain rights to parents and students concerning the access and disclosure of educational records. Compliance with FERPA standards ensures that student data collected and stored by educational institutions or services is handled in accordance with the law, safeguarding the privacy and confidentiality of student records.
+
+
+
+
+
+
+• Architecture
+• A block diagram, or other system-level view of the design, along with a textual 
+explanation of the overall function of the system.
+• Schematic(s) for hardware aspects of the system, accompanied by a parts list
+for any components that are not fully specified on the schematic. Schematics 
+should show component values for discrete parts, and pin numbers for ICs.
+Each schematic should be accompanied by a textual description that 
+summarizes the circuit’s operation.
+• Flowchart(s), pseudocode, or other appropriate descriptions of 
+software/firmware aspects of the system, along with a descriptive overview
+that summarizes its operation. DO NOT INCLUDE SOURCE CODE LISTINGS 
+HERE.
+
+To design the UI/UX, our client sent us other websites that are similar to the one we were developing. We used those sites as inspiration for how to design our application. Namely, we wanted to emphasize a clean UI that was easy to use. We accomplished this by focusing on minimal screen clutter— making sure that every screen only had the needed information and no more. 
+
+• Pictures or drawings of all user-interfaces, with textual explanations where 
+needed to explain their function/operation.
+
+There are no major physical components to our project.
+
+• UI/UX testing and research, especially for app/software projects that 
+emphasize on UI and front end; testing can be in the forms of demo and survey 
+• Maintenance
+
+The important dependencies of our system are the website hosting service and the database hosting service.
+
+• Describe possible enhancements, extensions or improvements that can be 
+made to your product. An important part of this is a candid assessment of the 
+limitations of your design.
+
+Diagrams, schematics, etc. should be neat, and legible. Hand-drawn figures should be avoided.
+
+4. Test Report
+The Test Report should be a table or list that describes a set measurements and/or tests conducted to verify that the completed prototype meets all requirements an
+constraints. Each entry in the test report should specify an objective test conducted on the system and the pass/fail outcome of the test. If the test is a measurement, the 
+result should include both the measured value and an indication of whether it falls in 
+the acceptable range. Requirements addressed and passing criteria for each test item should be clearly stated. A requirements traceability matrix similar to the following should be included. 
+
+5. Appendices
+Any additional relevant information should be provided as appendices to the main 
+document. This may include items such as a User Manual, source code, PCB layout files, etc. Any appendix that is lengthy or not textual in nature should be packaged as a separate file from the main documentation report. Software source code should 
+be packaged as separate files.
+Web / Tablet Application for a Neurocognitive Assessment
+
+Hackstreet Boys
+Evan Cooke, Sam Maschmann, Emily Sheahan
+April 8, 2024
+
+1. Introduction:
+In today’s society, neurodivergence is becoming a mainstream subject to the public as more people start to understand it. Many people can go many years without realizing that they are neurodivergent. Without receiving the needed accommodations the person can run into academic and social struggles. In an effort to enhance early identification of disabilities, the aim of this project was to screen and monitor elementary students for neurocognitive adversities. By delivering diagnostic tests to students at an early age, neurodivergent trends can be detected early enough so that those students can receive the additional help they need as they develop.
+
+Our goal was to design a web application that allows users to login as students or
+practitioners. Once logged in, students use an interface where they can take a diagnostic assessment, and have the test data stored in a repository. Practitioners should be able to use an interface to view, analyze, and export test data. In addition, students should be able to create a personal avatar for their profile and the project should have numerous accessibility settings (braille, text to speech, colorblind friendly, multiple languages, etc.)
+
+2. Project Outcome
+Overall, the project was successful. We managed to meet all of our major goals in developing the application.
+
+All in all, there were no major deviations from the Final Project Proposal. Due to time constraints, we were unable to implement the accessibility features, but all base functionality is implemented.
+
+In general, Evan handled the majority of the front-end design, Sam did the back-end, and Emily worked on integration.
+
+To organize and manage the project, we used Agile methods, breaking up the project into sprints. Communication was key to success, and having regular team meetings was important to keep everyone on track and be of help in case anyone ran into a roadblock.
+
+Time management was one of the factors that held us back in the completion of the project. It was difficult to prioritize the project when, as seniors, we had other concerns such as midterms, projects and labs for other classes, and job hunting. 
+
+• If your project has software component, you are expected to use internet 
+repository and version control platform (GitHub, Gitlab, Bitbucket, etc.). Please 
+include a snapshot of commit history/statistics breakdown by team members. 
+
+3. Design Documentation
+This section of the report should describe the hardware and software design of your 
+project. The documentation should include, as relevant to the design, the following 
+subsections:
+• Design Concept
+• Recap of the initial design concept identified in the Final Project Proposal and 
+how it evolved into your final design. 
+• Design a solution that meets the specified needs 
+• Discuss if the design meets all the needs and specification 
+• Analysis of possible solutions and tradeoffs 
+
+Our sponsor had a SquareSpace website set up as a possible avenue for developing our application, however we quickly realized that it was not suitable for our project. It does not support databases, nor accounts, so we quickly decided to use a different tool. We ended up using Node/React for the frontend web design, and PostgreSQL for the backend. We initially used MySQL for the server, since that was a database that we had used in past projects, however, PostgreSQL was better suited for remote hosting, which is necessary for deploying the application. Switching over the database meant we lost some time, and we should have done more research on databases to avoid this delay.
+
+• A discussion of important considerations and/or tradeoffs involved in reaching 
+the final design.
+• Analyze possible solutions before identifying the best design
+List important constraints that your system must satisfy and the steps that you 
+took in your design to meet these constraints. If you were unable to meet any 
+of the constraints identified in the Final Project Proposal, discuss the reason(s) 
+why this was the case. Also, describe any new constraints that you 
+encountered which were not identified in the Final Project Proposal and how 
+you met these constraints.
+
+There are three major standards we had to comply with in the creation of this project:
+
+HTML is the standard markup language for creating web pages and web applications.
+In this project, HTML will be used to structure the content and layout of the web application's user interface (UI). Compliance with HTML standards ensures compatibility across different web browsers and devices, enhancing the accessibility and usability of the application. 
+
+HIPAA is a federal law in the United States that establishes privacy and security standards for protecting sensitive patient health information (PHI).
+Compliance with HIPAA standards is essential when handling any medical or health-related data, ensuring the confidentiality, integrity, and availability of PHI.
+In the context of the project, adherence to HIPAA standards is crucial for protecting the privacy and security of neurocognitive assessment data collected from students.
+
+FERPA is a federal law in the United States that protects the privacy of student education records. FERPA grants certain rights to parents and students concerning the access and disclosure of educational records. Compliance with FERPA standards ensures that student data collected and stored by educational institutions or services is handled in accordance with the law, safeguarding the privacy and confidentiality of student records.
+
+
+
+
+
+
+• Architecture
+• A block diagram, or other system-level view of the design, along with a textual 
+explanation of the overall function of the system.
+• Schematic(s) for hardware aspects of the system, accompanied by a parts list
+for any components that are not fully specified on the schematic. Schematics 
+should show component values for discrete parts, and pin numbers for ICs.
+Each schematic should be accompanied by a textual description that 
+summarizes the circuit’s operation.
+• Flowchart(s), pseudocode, or other appropriate descriptions of 
+software/firmware aspects of the system, along with a descriptive overview
+that summarizes its operation. DO NOT INCLUDE SOURCE CODE LISTINGS 
+HERE.
+
+To design the UI/UX, our client sent us other websites that are similar to the one we were developing. We used those sites as inspiration for how to design our application. Namely, we wanted to emphasize a clean UI that was easy to use. We accomplished this by focusing on minimal screen clutter— making sure that every screen only had the needed information and no more. 
+
+• Pictures or drawings of all user-interfaces, with textual explanations where 
+needed to explain their function/operation.
+
+There are no major physical components to our project.
+
+• UI/UX testing and research, especially for app/software projects that 
+emphasize on UI and front end; testing can be in the forms of demo and survey 
+• Maintenance
+
+The important dependencies of our system are the website hosting service and the database hosting service.
+
+• Describe possible enhancements, extensions or improvements that can be 
+made to your product. An important part of this is a candid assessment of the 
+limitations of your design.
+
+Diagrams, schematics, etc. should be neat, and legible. Hand-drawn figures should be avoided.
+
+4. Test Report
+The Test Report should be a table or list that describes a set measurements and/or tests conducted to verify that the completed prototype meets all requirements an
+constraints. Each entry in the test report should specify an objective test conducted on the system and the pass/fail outcome of the test. If the test is a measurement, the 
+result should include both the measured value and an indication of whether it falls in 
+the acceptable range. Requirements addressed and passing criteria for each test item should be clearly stated. A requirements traceability matrix similar to the following should be included. 
+
+5. Appendices
+Any additional relevant information should be provided as appendices to the main 
+document. This may include items such as a User Manual, source code, PCB layout files, etc. Any appendix that is lengthy or not textual in nature should be packaged as a separate file from the main documentation report. Software source code should 
+be packaged as separate files.
+Web / Tablet Application for a Neurocognitive Assessment
+
+Hackstreet Boys
+Evan Cooke, Sam Maschmann, Emily Sheahan
+April 8, 2024
+
+1. Introduction:
+In today’s society, neurodivergence is becoming a mainstream subject to the public as more people start to understand it. Many people can go many years without realizing that they are neurodivergent. Without receiving the needed accommodations the person can run into academic and social struggles. In an effort to enhance early identification of disabilities, the aim of this project was to screen and monitor elementary students for neurocognitive adversities. By delivering diagnostic tests to students at an early age, neurodivergent trends can be detected early enough so that those students can receive the additional help they need as they develop.
+
+Our goal was to design a web application that allows users to login as students or
+practitioners. Once logged in, students use an interface where they can take a diagnostic assessment, and have the test data stored in a repository. Practitioners should be able to use an interface to view, analyze, and export test data. In addition, students should be able to create a personal avatar for their profile and the project should have numerous accessibility settings (braille, text to speech, colorblind friendly, multiple languages, etc.)
+
+2. Project Outcome
+Overall, the project was successful. We managed to meet all of our major goals in developing the application.
+
+All in all, there were no major deviations from the Final Project Proposal. Due to time constraints, we were unable to implement the accessibility features, but all base functionality is implemented.
+
+In general, Evan handled the majority of the front-end design, Sam did the back-end, and Emily worked on integration.
+
+To organize and manage the project, we used Agile methods, breaking up the project into sprints. Communication was key to success, and having regular team meetings was important to keep everyone on track and be of help in case anyone ran into a roadblock.
+
+Time management was one of the factors that held us back in the completion of the project. It was difficult to prioritize the project when, as seniors, we had other concerns such as midterms, projects and labs for other classes, and job hunting. 
+
+• If your project has software component, you are expected to use internet 
+repository and version control platform (GitHub, Gitlab, Bitbucket, etc.). Please 
+include a snapshot of commit history/statistics breakdown by team members. 
+
+3. Design Documentation
+This section of the report should describe the hardware and software design of your 
+project. The documentation should include, as relevant to the design, the following 
+subsections:
+• Design Concept
+• Recap of the initial design concept identified in the Final Project Proposal and 
+how it evolved into your final design. 
+• Design a solution that meets the specified needs 
+• Discuss if the design meets all the needs and specification 
+• Analysis of possible solutions and tradeoffs 
+
+Our sponsor had a SquareSpace website set up as a possible avenue for developing our application, however we quickly realized that it was not suitable for our project. It does not support databases, nor accounts, so we quickly decided to use a different tool. We ended up using Node/React for the frontend web design, and PostgreSQL for the backend. We initially used MySQL for the server, since that was a database that we had used in past projects, however, PostgreSQL was better suited for remote hosting, which is necessary for deploying the application. Switching over the database meant we lost some time, and we should have done more research on databases to avoid this delay.
+
+• A discussion of important considerations and/or tradeoffs involved in reaching 
+the final design.
+• Analyze possible solutions before identifying the best design
+List important constraints that your system must satisfy and the steps that you 
+took in your design to meet these constraints. If you were unable to meet any 
+of the constraints identified in the Final Project Proposal, discuss the reason(s) 
+why this was the case. Also, describe any new constraints that you 
+encountered which were not identified in the Final Project Proposal and how 
+you met these constraints.
+
+There are three major standards we had to comply with in the creation of this project:
+
+HTML is the standard markup language for creating web pages and web applications.
+In this project, HTML will be used to structure the content and layout of the web application's user interface (UI). Compliance with HTML standards ensures compatibility across different web browsers and devices, enhancing the accessibility and usability of the application. 
+
+HIPAA is a federal law in the United States that establishes privacy and security standards for protecting sensitive patient health information (PHI).
+Compliance with HIPAA standards is essential when handling any medical or health-related data, ensuring the confidentiality, integrity, and availability of PHI.
+In the context of the project, adherence to HIPAA standards is crucial for protecting the privacy and security of neurocognitive assessment data collected from students.
+
+FERPA is a federal law in the United States that protects the privacy of student education records. FERPA grants certain rights to parents and students concerning the access and disclosure of educational records. Compliance with FERPA standards ensures that student data collected and stored by educational institutions or services is handled in accordance with the law, safeguarding the privacy and confidentiality of student records.
+
+
+
+
+
+
+• Architecture
+• A block diagram, or other system-level view of the design, along with a textual 
+explanation of the overall function of the system.
+• Schematic(s) for hardware aspects of the system, accompanied by a parts list
+for any components that are not fully specified on the schematic. Schematics 
+should show component values for discrete parts, and pin numbers for ICs.
+Each schematic should be accompanied by a textual description that 
+summarizes the circuit’s operation.
+• Flowchart(s), pseudocode, or other appropriate descriptions of 
+software/firmware aspects of the system, along with a descriptive overview
+that summarizes its operation. DO NOT INCLUDE SOURCE CODE LISTINGS 
+HERE.
+
+To design the UI/UX, our client sent us other websites that are similar to the one we were developing. We used those sites as inspiration for how to design our application. Namely, we wanted to emphasize a clean UI that was easy to use. We accomplished this by focusing on minimal screen clutter— making sure that every screen only had the needed information and no more. 
+
+• Pictures or drawings of all user-interfaces, with textual explanations where 
+needed to explain their function/operation.
+
+There are no major physical components to our project.
+
+• UI/UX testing and research, especially for app/software projects that 
+emphasize on UI and front end; testing can be in the forms of demo and survey 
+• Maintenance
+
+The important dependencies of our system are the website hosting service and the database hosting service.
+
+• Describe possible enhancements, extensions or improvements that can be 
+made to your product. An important part of this is a candid assessment of the 
+limitations of your design.
+
+Diagrams, schematics, etc. should be neat, and legible. Hand-drawn figures should be avoided.
+
+4. Test Report
+The Test Report should be a table or list that describes a set measurements and/or tests conducted to verify that the completed prototype meets all requirements an
+constraints. Each entry in the test report should specify an objective test conducted on the system and the pass/fail outcome of the test. If the test is a measurement, the 
+result should include both the measured value and an indication of whether it falls in 
+the acceptable range. Requirements addressed and passing criteria for each test item should be clearly stated. A requirements traceability matrix similar to the following should be included. 
+
+5. Appendices
+Any additional relevant information should be provided as appendices to the main 
+document. This may include items such as a User Manual, source code, PCB layout files, etc. Any appendix that is lengthy or not textual in nature should be packaged as a separate file from the main documentation report. Software source code should 
+be packaged as separate files.
+Web / Tablet Application for a Neurocognitive Assessment
+
+Hackstreet Boys
+Evan Cooke, Sam Maschmann, Emily Sheahan
+April 8, 2024
+
+1. Introduction:
+In today’s society, neurodivergence is becoming a mainstream subject to the public as more people start to understand it. Many people can go many years without realizing that they are neurodivergent. Without receiving the needed accommodations the person can run into academic and social struggles. In an effort to enhance early identification of disabilities, the aim of this project was to screen and monitor elementary students for neurocognitive adversities. By delivering diagnostic tests to students at an early age, neurodivergent trends can be detected early enough so that those students can receive the additional help they need as they develop.
+
+Our goal was to design a web application that allows users to login as students or
+practitioners. Once logged in, students use an interface where they can take a diagnostic assessment, and have the test data stored in a repository. Practitioners should be able to use an interface to view, analyze, and export test data. In addition, students should be able to create a personal avatar for their profile and the project should have numerous accessibility settings (braille, text to speech, colorblind friendly, multiple languages, etc.)
+
+2. Project Outcome
+Overall, the project was successful. We managed to meet all of our major goals in developing the application.
+
+All in all, there were no major deviations from the Final Project Proposal. Due to time constraints, we were unable to implement the accessibility features, but all base functionality is implemented.
+
+In general, Evan handled the majority of the front-end design, Sam did the back-end, and Emily worked on integration.
+
+To organize and manage the project, we used Agile methods, breaking up the project into sprints. Communication was key to success, and having regular team meetings was important to keep everyone on track and be of help in case anyone ran into a roadblock.
+
+Time management was one of the factors that held us back in the completion of the project. It was difficult to prioritize the project when, as seniors, we had other concerns such as midterms, projects and labs for other classes, and job hunting. 
+
+• If your project has software component, you are expected to use internet 
+repository and version control platform (GitHub, Gitlab, Bitbucket, etc.). Please 
+include a snapshot of commit history/statistics breakdown by team members. 
+
+3. Design Documentation
+This section of the report should describe the hardware and software design of your 
+project. The documentation should include, as relevant to the design, the following 
+subsections:
+• Design Concept
+• Recap of the initial design concept identified in the Final Project Proposal and 
+how it evolved into your final design. 
+• Design a solution that meets the specified needs 
+• Discuss if the design meets all the needs and specification 
+• Analysis of possible solutions and tradeoffs 
+
+Our sponsor had a SquareSpace website set up as a possible avenue for developing our application, however we quickly realized that it was not suitable for our project. It does not support databases, nor accounts, so we quickly decided to use a different tool. We ended up using Node/React for the frontend web design, and PostgreSQL for the backend. We initially used MySQL for the server, since that was a database that we had used in past projects, however, PostgreSQL was better suited for remote hosting, which is necessary for deploying the application. Switching over the database meant we lost some time, and we should have done more research on databases to avoid this delay.
+
+• A discussion of important considerations and/or tradeoffs involved in reaching 
+the final design.
+• Analyze possible solutions before identifying the best design
+List important constraints that your system must satisfy and the steps that you 
+took in your design to meet these constraints. If you were unable to meet any 
+of the constraints identified in the Final Project Proposal, discuss the reason(s) 
+why this was the case. Also, describe any new constraints that you 
+encountered which were not identified in the Final Project Proposal and how 
+you met these constraints.
+
+There are three major standards we had to comply with in the creation of this project:
+
+HTML is the standard markup language for creating web pages and web applications.
+In this project, HTML will be used to structure the content and layout of the web application's user interface (UI). Compliance with HTML standards ensures compatibility across different web browsers and devices, enhancing the accessibility and usability of the application. 
+
+HIPAA is a federal law in the United States that establishes privacy and security standards for protecting sensitive patient health information (PHI).
+Compliance with HIPAA standards is essential when handling any medical or health-related data, ensuring the confidentiality, integrity, and availability of PHI.
+In the context of the project, adherence to HIPAA standards is crucial for protecting the privacy and security of neurocognitive assessment data collected from students.
+
+FERPA is a federal law in the United States that protects the privacy of student education records. FERPA grants certain rights to parents and students concerning the access and disclosure of educational records. Compliance with FERPA standards ensures that student data collected and stored by educational institutions or services is handled in accordance with the law, safeguarding the privacy and confidentiality of student records.
+
+
+
+
+
+
+• Architecture
+• A block diagram, or other system-level view of the design, along with a textual 
+explanation of the overall function of the system.
+• Schematic(s) for hardware aspects of the system, accompanied by a parts list
+for any components that are not fully specified on the schematic. Schematics 
+should show component values for discrete parts, and pin numbers for ICs.
+Each schematic should be accompanied by a textual description that 
+summarizes the circuit’s operation.
+• Flowchart(s), pseudocode, or other appropriate descriptions of 
+software/firmware aspects of the system, along with a descriptive overview
+that summarizes its operation. DO NOT INCLUDE SOURCE CODE LISTINGS 
+HERE.
+
+To design the UI/UX, our client sent us other websites that are similar to the one we were developing. We used those sites as inspiration for how to design our application. Namely, we wanted to emphasize a clean UI that was easy to use. We accomplished this by focusing on minimal screen clutter— making sure that every screen only had the needed information and no more. 
+
+• Pictures or drawings of all user-interfaces, with textual explanations where 
+needed to explain their function/operation.
+
+There are no major physical components to our project.
+
+• UI/UX testing and research, especially for app/software projects that 
+emphasize on UI and front end; testing can be in the forms of demo and survey 
+• Maintenance
+
+The important dependencies of our system are the website hosting service and the database hosting service.
+
+• Describe possible enhancements, extensions or improvements that can be 
+made to your product. An important part of this is a candid assessment of the 
+limitations of your design.
+
+Diagrams, schematics, etc. should be neat, and legible. Hand-drawn figures should be avoided.
+
+4. Test Report
+The Test Report should be a table or list that describes a set measurements and/or tests conducted to verify that the completed prototype meets all requirements an
+constraints. Each entry in the test report should specify an objective test conducted on the system and the pass/fail outcome of the test. If the test is a measurement, the 
+result should include both the measured value and an indication of whether it falls in 
+the acceptable range. Requirements addressed and passing criteria for each test item should be clearly stated. A requirements traceability matrix similar to the following should be included. 
+
+5. Appendices
+Any additional relevant information should be provided as appendices to the main 
+document. This may include items such as a User Manual, source code, PCB layout files, etc. Any appendix that is lengthy or not textual in nature should be packaged as a separate file from the main documentation report. Software source code should 
+be packaged as separate files.
+Web / Tablet Application for a Neurocognitive Assessment
+
+Hackstreet Boys
+Evan Cooke, Sam Maschmann, Emily Sheahan
+April 8, 2024
+
+1. Introduction:
+In today’s society, neurodivergence is becoming a mainstream subject to the public as more people start to understand it. Many people can go many years without realizing that they are neurodivergent. Without receiving the needed accommodations the person can run into academic and social struggles. In an effort to enhance early identification of disabilities, the aim of this project was to screen and monitor elementary students for neurocognitive adversities. By delivering diagnostic tests to students at an early age, neurodivergent trends can be detected early enough so that those students can receive the additional help they need as they develop.
+
+Our goal was to design a web application that allows users to login as students or
+practitioners. Once logged in, students use an interface where they can take a diagnostic assessment, and have the test data stored in a repository. Practitioners should be able to use an interface to view, analyze, and export test data. In addition, students should be able to create a personal avatar for their profile and the project should have numerous accessibility settings (braille, text to speech, colorblind friendly, multiple languages, etc.)
+
+2. Project Outcome
+Overall, the project was successful. We managed to meet all of our major goals in developing the application.
+
+All in all, there were no major deviations from the Final Project Proposal. Due to time constraints, we were unable to implement the accessibility features, but all base functionality is implemented.
+
+In general, Evan handled the majority of the front-end design, Sam did the back-end, and Emily worked on integration.
+
+To organize and manage the project, we used Agile methods, breaking up the project into sprints. Communication was key to success, and having regular team meetings was important to keep everyone on track and be of help in case anyone ran into a roadblock.
+
+Time management was one of the factors that held us back in the completion of the project. It was difficult to prioritize the project when, as seniors, we had other concerns such as midterms, projects and labs for other classes, and job hunting. 
+
+• If your project has software component, you are expected to use internet 
+repository and version control platform (GitHub, Gitlab, Bitbucket, etc.). Please 
+include a snapshot of commit history/statistics breakdown by team members. 
+
+3. Design Documentation
+This section of the report should describe the hardware and software design of your 
+project. The documentation should include, as relevant to the design, the following 
+subsections:
+• Design Concept
+• Recap of the initial design concept identified in the Final Project Proposal and 
+how it evolved into your final design. 
+• Design a solution that meets the specified needs 
+• Discuss if the design meets all the needs and specification 
+• Analysis of possible solutions and tradeoffs 
+
+Our sponsor had a SquareSpace website set up as a possible avenue for developing our application, however we quickly realized that it was not suitable for our project. It does not support databases, nor accounts, so we quickly decided to use a different tool. We ended up using Node/React for the frontend web design, and PostgreSQL for the backend. We initially used MySQL for the server, since that was a database that we had used in past projects, however, PostgreSQL was better suited for remote hosting, which is necessary for deploying the application. Switching over the database meant we lost some time, and we should have done more research on databases to avoid this delay.
+
+• A discussion of important considerations and/or tradeoffs involved in reaching 
+the final design.
+• Analyze possible solutions before identifying the best design
+List important constraints that your system must satisfy and the steps that you 
+took in your design to meet these constraints. If you were unable to meet any 
+of the constraints identified in the Final Project Proposal, discuss the reason(s) 
+why this was the case. Also, describe any new constraints that you 
+encountered which were not identified in the Final Project Proposal and how 
+you met these constraints.
+
+There are three major standards we had to comply with in the creation of this project:
+
+HTML is the standard markup language for creating web pages and web applications.
+In this project, HTML will be used to structure the content and layout of the web application's user interface (UI). Compliance with HTML standards ensures compatibility across different web browsers and devices, enhancing the accessibility and usability of the application. 
+
+HIPAA is a federal law in the United States that establishes privacy and security standards for protecting sensitive patient health information (PHI).
+Compliance with HIPAA standards is essential when handling any medical or health-related data, ensuring the confidentiality, integrity, and availability of PHI.
+In the context of the project, adherence to HIPAA standards is crucial for protecting the privacy and security of neurocognitive assessment data collected from students.
+
+FERPA is a federal law in the United States that protects the privacy of student education records. FERPA grants certain rights to parents and students concerning the access and disclosure of educational records. Compliance with FERPA standards ensures that student data collected and stored by educational institutions or services is handled in accordance with the law, safeguarding the privacy and confidentiality of student records.
+
+
+
+
+
+
+• Architecture
+• A block diagram, or other system-level view of the design, along with a textual 
+explanation of the overall function of the system.
+• Schematic(s) for hardware aspects of the system, accompanied by a parts list
+for any components that are not fully specified on the schematic. Schematics 
+should show component values for discrete parts, and pin numbers for ICs.
+Each schematic should be accompanied by a textual description that 
+summarizes the circuit’s operation.
+• Flowchart(s), pseudocode, or other appropriate descriptions of 
+software/firmware aspects of the system, along with a descriptive overview
+that summarizes its operation. DO NOT INCLUDE SOURCE CODE LISTINGS 
+HERE.
+
+To design the UI/UX, our client sent us other websites that are similar to the one we were developing. We used those sites as inspiration for how to design our application. Namely, we wanted to emphasize a clean UI that was easy to use. We accomplished this by focusing on minimal screen clutter— making sure that every screen only had the needed information and no more. 
+
+• Pictures or drawings of all user-interfaces, with textual explanations where 
+needed to explain their function/operation.
+
+There are no major physical components to our project.
+
+• UI/UX testing and research, especially for app/software projects that 
+emphasize on UI and front end; testing can be in the forms of demo and survey 
+• Maintenance
+
+The important dependencies of our system are the website hosting service and the database hosting service.
+
+• Describe possible enhancements, extensions or improvements that can be 
+made to your product. An important part of this is a candid assessment of the 
+limitations of your design.
+
+Diagrams, schematics, etc. should be neat, and legible. Hand-drawn figures should be avoided.
+
+4. Test Report
+The Test Report should be a table or list that describes a set measurements and/or tests conducted to verify that the completed prototype meets all requirements an
+constraints. Each entry in the test report should specify an objective test conducted on the system and the pass/fail outcome of the test. If the test is a measurement, the 
+result should include both the measured value and an indication of whether it falls in 
+the acceptable range. Requirements addressed and passing criteria for each test item should be clearly stated. A requirements traceability matrix similar to the following should be included. 
+
+5. Appendices
+Any additional relevant information should be provided as appendices to the main 
+document. This may include items such as a User Manual, source code, PCB layout files, etc. Any appendix that is lengthy or not textual in nature should be packaged as a separate file from the main documentation report. Software source code should 
+be packaged as separate files.
