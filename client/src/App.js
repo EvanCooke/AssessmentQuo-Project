@@ -8,6 +8,7 @@ import Dashboard from './Components/Dashboard/Dashboard.jsx';
 import StudentHomepage from './Components/StudentHomepage/StudentHomepage.jsx';
 import PractitionerHomepage from './Components/PractitionerHomepage/PractitionerHomepage.jsx';
 import Homepage from './Components/Homepage/Homepage.jsx';
+import TestPage from './Components/TestPage/TestPage.jsx';
 import Error from './Components/Error/Error.jsx';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
                 <Route exact path="/student-home" element={<StudentHomepage/>} />
                 <Route exact path="/practitioner-home" element={<PractitionerHomepage/>} />
                 <Route exact path="/home" element={<Homepage/>} />
+                <Route exact path="/test" element={<TestPage/>} />
                 <Route exact path="*" element={<Error/>} />
             </Routes>            
         </Router>

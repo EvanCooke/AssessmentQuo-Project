@@ -1,0 +1,156 @@
+.testPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.headerBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: white;
+    background-color: white;
+    z-index: 1000;
+    border: 0.0625rem solid rgb(180, 180, 180);
+}
+
+.headerTitle {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: black;
+    padding-left: 21%;
+}
+
+.contactButton {
+    background-color: #7173F9;
+    color: white;
+    border: none;
+    padding: .5rem 1rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: .9rem;
+    font-weight: bold;
+    margin: 1% 1em; /*might need to change em unit */
+    margin-right: 21vw; /*might need to change vw unit */
+    cursor: pointer;
+    border-radius: .6rem;
+}
+
+.button {
+    border: none;
+    background-color: white;
+    color: #3f3f3f;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 1% 1vh; /*might need to change vh unit */
+    cursor: pointer;
+}
+
+.questionContainer {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    margin-left: 21%;
+    margin-right: 21%;
+    margin-top: 8%;
+    padding: 3%;
+    border: 3px solid black;
+}
+
+.questionBackground {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.questionText {
+    font-size: 1rem;
+    font-weight: 700;
+    color: black;
+    text-align: center;
+}
+
+.question {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: black;
+    text-align: center;
+}
+
+.answerContainer {
+    display: flex;
+    justify-content: center; 
+    
+}
+
+.answer {
+    border: 3px solid black;
+    margin: 4%;
+    font-size: 1rem;
+    color: black;
+    padding: 5%;
+    background: none;
+    cursor: pointer;
+}
+
+
+.selected {
+    background-color: #7173F9;
+    color: white;
+}
+
+.next {
+    border: none;
+    background-color: #7173F9;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    margin-top: 10%;
+    cursor: pointer;
+    padding: 1%;
+    border-radius: .6rem;
+    width: 30%;
+}
+
+.optionButtons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+    margin-left: 21%;
+    margin-right: 21%;
+}
+
+.optionButton {
+    border: 3px solid black;
+    border-radius: .6rem;
+    font-size: 1rem;
+    color: black;
+    background-color: rgb(210, 210, 210);
+    cursor: pointer;
+    margin-left: 2%;
+    margin-right: 2%;
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-top: .5%;
+    padding-bottom: .5%;
+}
