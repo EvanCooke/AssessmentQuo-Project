@@ -28,28 +28,28 @@ function TestPage() {
                         <p>Question 1</p>
                     </div>
                     <div className={styles.question}>
-                        <p>What is the capital of France?</p>
+                        <p>What is the capital of Iowa?</p>
                     </div>
                     <div className={styles.answerContainer}>
                     <button 
-                            className={`${styles.answer} ${selectedAnswer === 'Paris' ? styles.selected : ''}`}
-                            onClick={() => handleAnswerClick('Paris')}>
-                            Paris
+                            className={`${styles.answer} ${selectedAnswer === 'Des Moines' ? styles.selected : ''}`}
+                            onClick={() => handleAnswerClick('Des Moines')}>
+                            Des Moines
                         </button>
                         <button 
-                            className={`${styles.answer} ${selectedAnswer === 'London' ? styles.selected : ''}`}
-                            onClick={() => handleAnswerClick('London')}>
-                            London
+                            className={`${styles.answer} ${selectedAnswer === 'Iowa City' ? styles.selected : ''}`}
+                            onClick={() => handleAnswerClick('Iowa City')}>
+                            Iowa City
                         </button>
                         <button 
-                            className={`${styles.answer} ${selectedAnswer === 'Berlin' ? styles.selected : ''}`}
-                            onClick={() => handleAnswerClick('Berlin')}>
-                            Berlin
+                            className={`${styles.answer} ${selectedAnswer === 'Cedar Rapids' ? styles.selected : ''}`}
+                            onClick={() => handleAnswerClick('Cedar Rapids')}>
+                            Cedar Rapids
                         </button>
                         <button 
-                            className={`${styles.answer} ${selectedAnswer === 'Madrid' ? styles.selected : ''}`}
-                            onClick={() => handleAnswerClick('Madrid')}>
-                            Madrid
+                            className={`${styles.answer} ${selectedAnswer === 'Davenport' ? styles.selected : ''}`}
+                            onClick={() => handleAnswerClick('Davenport')}>
+                            Davenport
                         </button>
                     </div>
                     <div className={styles.next}>
@@ -57,13 +57,13 @@ function TestPage() {
                     </div>
                 </div>
             </div>
-            <div className={styles.optionButtons}>
+            {/* <div className={styles.optionButtons}>
                 <button className={styles.optionButton}>Clear</button>
                 <button className={styles.optionButton}>Help</button>
                 <button className={styles.optionButton}>Pause/Exit</button>
                 <button className={styles.optionButton}>Zoom</button>
                 <button className={styles.optionButton}>Text-to-Speech</button>
-            </div>
+            </div> */}
         </div>
     )
 }
