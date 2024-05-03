@@ -131,6 +131,22 @@
     width: 30%;
 }
 
+.nextButton {
+    background-color: #7173F9;
+    color: white;
+    border: none;
+    padding: .5rem 1rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: .9rem;
+    font-weight: bold;
+    margin: 1% 1em; 
+    /* margin-right: 21vw; */
+    cursor: pointer;
+    border-radius: .6rem;
+}
+
 .optionButtons {
     display: flex;
     justify-content: center;

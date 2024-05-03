@@ -107,9 +107,25 @@
 
 .logoutContainer {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 22rem;
+    margin-top: 50%;
+}
+
+.createAvatarButton{
+    background-color: #7173F9;
+    color: white;
+    border: none;
+    padding: .5rem 1rem;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 1% 1vh; /*might need to change vh unit */
+    cursor: pointer;
+    border-radius: .4rem;
+    margin-bottom: 5%;
 }
 
 .logoutButton {
@@ -261,4 +277,18 @@
     font-weight: bold;
     cursor: pointer;
     border-radius: .4rem;
+}
+
+.beginButton {
+    background-color: #7173F9;
+    color: white;
+    border: none;
+    padding: .5rem 1rem;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: .4rem;
+    margin-top: 3%;
 }

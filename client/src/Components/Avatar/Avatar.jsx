@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import styles from './Avatar.module.css';
 
 // import assets/images
@@ -51,9 +52,9 @@ function Avatar() {
             <div className={styles.headerBar}>
                 <h2 className={styles.headerTitle}>ASSESSMENTQUO</h2>
                 <div>
-                    <button className={styles.button}>About Us</button>
-                    <button className={styles.button}>Learn More</button>
-                    <button className={styles.contactButton}>Contact Us</button>
+                    <Link to="/home" className={styles.button}>About Us</Link>
+                    <Link to="/home" className={styles.button}>Learn More</Link>
+                    <a href="mailto:evcooke@uiowa.edu" className={styles.contactButton}>Contact Us</a>
                 </div>
             </div>
             <div className={styles.container}>
@@ -88,7 +89,7 @@ function Avatar() {
                     </div>
                     <div className={styles.buttonContainer}>
                         <button className={styles.contactButton} onClick={() => handleResetClick()}>Reset</button>
-                        <button className={styles.contactButton}>Save</button>
+                        <Link to="/dashboard" className={styles.contactButton}>Save</Link>
                     </div>
 
                 </div>

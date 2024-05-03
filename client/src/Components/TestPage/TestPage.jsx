@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import styles from './TestPage.module.css';
 
 // import assets/images
@@ -7,53 +8,68 @@ import stars_background from '../Assets/stars-background.svg';
 
 function TestPage() {
     const [selectedAnswer, setSelectedAnswer] = useState(null);
+    const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+    const missionRef = useRef(null);
+    const scrollToMission = () => missionRef.current.scrollIntoView({ behavior: 'smooth' });
+
 
     const handleAnswerClick = (answer) => {
         setSelectedAnswer(answer);
     }
+
+    const handleNextClick = () => {
+        setCurrentQuestionIndex(currentQuestionIndex + 1);
+        setSelectedAnswer(null);
+    };
+
+    const questions = [
+        {
+            text: 'What is the capital of Iowa?',
+            answers: ['Des Moines', 'Iowa City', 'Cedar Rapids', 'Davenport']
+        },
+        {
+            text: 'What animal is the University of Iowa\'s Mascot?',
+            answers: ['Lion', 'Fish', 'Hawk', 'Martian']
+        },
+        {
+            text: 'Did you enjoy this demonstration?',
+            answers: ['Yes', 'Definitely']
+        },
+    ];
 
     return (
         <div className={styles.testPage}>
              <div className={styles.headerBar}>
                 <h2 className={styles.headerTitle}>ASSESSMENTQUO</h2>
                 <div>
-                    <button className={styles.button}>About Us</button>
-                    <button className={styles.button}>Learn More</button>
-                    <button className={styles.contactButton}>Contact Us</button>
+                    <Link to="/home" className={styles.button} onClick={scrollToMission}>About Us</Link>
+                    <Link to="/home" className={styles.button} onClick={scrollToMission}>Learn More</Link>
+                    <a href="mailto:evcooke@uiowa.edu" className={styles.contactButton}>Contact Us</a>
                 </div>
             </div>
             <div className={styles.questionContainer}>
                 <div className={styles.questionBackground}>
                     <div className={styles.questionText}>
-                        <p>Question 1</p>
+                        <p>Question {currentQuestionIndex + 1}</p>
                     </div>
                     <div className={styles.question}>
-                        <p>What is the capital of Iowa?</p>
+                        <p>{questions[currentQuestionIndex].text}</p>
                     </div>
                     <div className={styles.answerContainer}>
-                    <button 
-                            className={`${styles.answer} ${selectedAnswer === 'Des Moines' ? styles.selected : ''}`}
-                            onClick={() => handleAnswerClick('Des Moines')}>
-                            Des Moines
-                        </button>
-                        <button 
-                            className={`${styles.answer} ${selectedAnswer === 'Iowa City' ? styles.selected : ''}`}
-                            onClick={() => handleAnswerClick('Iowa City')}>
-                            Iowa City
-                        </button>
-                        <button 
-                            className={`${styles.answer} ${selectedAnswer === 'Cedar Rapids' ? styles.selected : ''}`}
-                            onClick={() => handleAnswerClick('Cedar Rapids')}>
-                            Cedar Rapids
-                        </button>
-                        <button 
-                            className={`${styles.answer} ${selectedAnswer === 'Davenport' ? styles.selected : ''}`}
-                            onClick={() => handleAnswerClick('Davenport')}>
-                            Davenport
-                        </button>
+                        {questions[currentQuestionIndex].answers.map(answer => (
+                            <button 
+                                className={`${styles.answer} ${selectedAnswer === answer ? styles.selected : ''}`}
+                                onClick={() => handleAnswerClick(answer)}>
+                                {answer}
+                            </button>
+                        ))}
                     </div>
                     <div className={styles.next}>
-                        <button className={styles.contactButton}>Next</button>
+                        {currentQuestionIndex === questions.length - 1 ? (
+                            <Link to="/dashboard" className={styles.nextButton}>Submit</Link>
+                        ) : (
+                            <button onClick={handleNextClick} className={styles.nextButton}>Next</button>
+                        )}
                     </div>
                 </div>
             </div>
