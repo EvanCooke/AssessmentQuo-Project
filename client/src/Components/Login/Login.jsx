@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import { Link } from 'react-router-dom';
 import styles from './Login.module.css';
 
 // import assets/images
@@ -6,14 +7,18 @@ import logo from '../Assets/assessmentquo-logo.png';
 import stars_background from '../Assets/stars-background.svg';
 
 function Login() {
+
+    const missionRef = useRef(null);
+    const scrollToMission = () => missionRef.current.scrollIntoView({ behavior: 'smooth' });
+
     return (
         <div className={styles.login}>
              <div className={styles.headerBar}>
                 <h2 className={styles.headerTitle}>ASSESSMENTQUO</h2>
                 <div>
-                    <button className={styles.button}>About Us</button>
-                    <button className={styles.button}>Learn More</button>
-                    <button className={styles.contactButton}>Contact Us</button>
+                    <Link to="/home" className={styles.button} onClick={scrollToMission}>About Us</Link>
+                    <Link to="/home" className={styles.button} onClick={scrollToMission}>Learn More</Link>
+                    <a href="mailto:evcooke@uiowa.edu" className={styles.contactButton}>Contact Us</a>
                 </div>
             </div>
             <div className={styles.firstContainer}>
@@ -48,7 +53,7 @@ function Login() {
                         <input type="text" placeholder="School" id="fname" name="fname"/>
                         <label for="Password">Password</label>
                         <input type="text" placeholder="Password" id="fname" name="fname"/>
-                        <button className={styles.signup}>Sign Up</button>
+                        <Link to="/dashboard" className={styles.signup}>Sign Up</Link>
                     </div>
                 </div>
             </div>

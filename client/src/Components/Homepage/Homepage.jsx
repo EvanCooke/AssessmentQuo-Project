@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import { Link } from 'react-router-dom';
 import styles from './Homepage.module.css';
 
 // import assets/images
@@ -6,14 +7,18 @@ import logo from '../Assets/assessmentquo-logo.png';
 import stars_background from '../Assets/stars-background.svg';
 
 function Homepage() {
+
+    const missionRef = useRef(null);
+    const scrollToMission = () => missionRef.current.scrollIntoView({ behavior: 'smooth' });
+
     return (
         <div className={styles.homepage}>
             <div className={styles.headerBar}>
                 <h2 className={styles.headerTitle}>ASSESSMENTQUO</h2>
                 <div>
-                    <button className={styles.button}>About Us</button>
-                    <button className={styles.button}>Learn More</button>
-                    <button className={styles.contactButton}>Contact Us</button>
+                    <button className={styles.button} onClick={scrollToMission}>About Us</button>
+                    <button className={styles.button} onClick={scrollToMission}>Learn More</button>
+                    <a href="mailto:evcooke@uiowa.edu" className={styles.contactButton}>Contact Us</a>
                 </div>
             </div>
             <div className={styles.firstContainer}>
@@ -22,13 +27,13 @@ function Homepage() {
                 </div>
                 <div className={styles.rightHalf}>
                     <p className={styles.titleText}><b>Easy Learning: Data Tools for <i>Teachers</i>, Tests for <i>Students</i></b></p>
-                    <button className={styles.loginButton}>Get Started</button>
-                    <button className={styles.loginButton}>I Already Have An Account</button>
+                    <Link to="/login" className={styles.loginButton}>Get Started</Link>
+                    <Link to="/login" className={styles.loginButton}>I Already Have An Account</Link>
                 </div>
             </div>
             <div className={styles.secondContainer}>
                 <div className={styles.starsBackground}>
-                    <div className={styles.ourMission}>OUR MISSION</div>
+                    <div className={styles.ourMission} ref={missionRef}>OUR MISSION</div>
                     <div className={styles.ourMissionText}>
                         <p>Welcome to our platform, where we believe in the power of education and the potential of technology.</p>
                         <p>Our mission is to simplify the learning process for both educators and students.</p>

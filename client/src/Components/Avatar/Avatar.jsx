@@ -87,7 +87,7 @@ function Avatar() {
                         </div>
                     </div>
                     <div className={styles.buttonContainer}>
-                        <button className={styles.contactButton}>Reset</button>
+                        <button className={styles.contactButton} onClick={() => handleResetClick()}>Reset</button>
                         <button className={styles.contactButton}>Save</button>
                     </div>
 
